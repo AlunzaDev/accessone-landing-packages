@@ -5,4 +5,8 @@ await cp(
   new URL('../src/styles/tokens.css', import.meta.url),
   new URL('../dist/styles/tokens.css', import.meta.url),
 );
+await cp(
+  new URL('../src/styles/service-card.css', import.meta.url),
+  new URL('../dist/styles/service-card.css', import.meta.url),
+);
 

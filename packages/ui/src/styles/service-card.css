@@ -1,0 +1,133 @@
+.accessone-service-card {
+  position: relative;
+  display: flex;
+  min-height: 320px;
+  padding: 30px;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid #dfe2eb;
+  border-radius: 22px;
+  background: #fdfeff;
+  color: #2e315c;
+  text-decoration: none;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.accessone-service-card::before {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 4px;
+  background: #feed00;
+  content: '';
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.accessone-service-card:hover,
+.accessone-service-card:focus-visible {
+  border-color: #c7cad8;
+  box-shadow: 0 22px 48px rgba(46, 49, 92, 0.13);
+  transform: translateY(-6px);
+}
+
+.accessone-service-card:focus-visible {
+  outline: 3px solid #125bf5;
+  outline-offset: 3px;
+}
+
+.accessone-service-card:hover::before,
+.accessone-service-card:focus-visible::before {
+  transform: scaleX(1);
+}
+
+.accessone-service-card__icon {
+  display: grid;
+  width: 64px;
+  height: 64px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 18px;
+  background: #2e315c;
+  color: #feed00;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.accessone-service-card__icon svg {
+  width: 30px;
+  height: 30px;
+}
+
+.accessone-service-card:hover .accessone-service-card__icon,
+.accessone-service-card:focus-visible .accessone-service-card__icon {
+  background: #125bf5;
+  transform: translateY(-3px);
+}
+
+.accessone-service-card__content {
+  margin-top: 36px;
+}
+
+.accessone-service-card__content h3 {
+  margin: 0 0 13px;
+  font: 600 24px/1.15 'Manrope', sans-serif;
+}
+
+.accessone-service-card__content p {
+  margin: 0;
+  color: #686b87;
+  line-height: 1.65;
+}
+
+.accessone-service-card__link {
+  display: flex;
+  margin-top: auto;
+  padding-top: 28px;
+  align-items: center;
+  justify-content: space-between;
+  color: #777a94;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.accessone-service-card__link b {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 50%;
+  background: #f1f2f6;
+  color: #2e315c;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+.accessone-service-card:hover .accessone-service-card__link b,
+.accessone-service-card:focus-visible .accessone-service-card__link b {
+  background: #feed00;
+}
+
+@media (max-width: 600px) {
+  .accessone-service-card {
+    min-height: 285px;
+    padding: 26px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .accessone-service-card,
+  .accessone-service-card::before,
+  .accessone-service-card__icon,
+  .accessone-service-card__link b {
+    transition: none;
+  }
+
+  .accessone-service-card:hover,
+  .accessone-service-card:focus-visible,
+  .accessone-service-card:hover .accessone-service-card__icon,
+  .accessone-service-card:focus-visible .accessone-service-card__icon {
+    transform: none;
+  }
+}
