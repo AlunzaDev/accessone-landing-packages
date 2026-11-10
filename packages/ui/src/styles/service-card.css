@@ -50,7 +50,28 @@
   border-radius: 18px;
   background: #2e315c;
   color: #feed00;
+  animation: accessoneServiceIconPulse 2s ease-in-out infinite;
   transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.accessone-service-card:nth-child(2) .accessone-service-card__icon {
+  animation-delay: 0.33s;
+}
+
+.accessone-service-card:nth-child(3) .accessone-service-card__icon {
+  animation-delay: 0.66s;
+}
+
+.accessone-service-card:nth-child(4) .accessone-service-card__icon {
+  animation-delay: 0.99s;
+}
+
+.accessone-service-card:nth-child(5) .accessone-service-card__icon {
+  animation-delay: 1.32s;
+}
+
+.accessone-service-card:nth-child(6) .accessone-service-card__icon {
+  animation-delay: 1.65s;
 }
 
 .accessone-service-card__icon svg {
@@ -60,8 +81,23 @@
 
 .accessone-service-card:hover .accessone-service-card__icon,
 .accessone-service-card:focus-visible .accessone-service-card__icon {
+  animation: none;
   background: #125bf5;
   transform: translateY(-3px);
+}
+
+@keyframes accessoneServiceIconPulse {
+  0%,
+  58%,
+  100% {
+    background: #2e315c;
+    color: #feed00;
+  }
+
+  78% {
+    background: #3d4174;
+    color: #fff5a5;
+  }
 }
 
 .accessone-service-card__content {
@@ -121,6 +157,7 @@
   .accessone-service-card::before,
   .accessone-service-card__icon,
   .accessone-service-card__link b {
+    animation: none;
     transition: none;
   }
 
