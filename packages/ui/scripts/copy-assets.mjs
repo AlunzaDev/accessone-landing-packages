@@ -13,4 +13,8 @@ await cp(
   new URL('../src/styles/identity-tabs.css', import.meta.url),
   new URL('../dist/styles/identity-tabs.css', import.meta.url),
 );
+await cp(
+  new URL('../src/styles/service-catalog-card.css', import.meta.url),
+  new URL('../dist/styles/service-catalog-card.css', import.meta.url),
+);
 
