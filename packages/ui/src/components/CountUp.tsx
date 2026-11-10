@@ -11,6 +11,8 @@ export interface CountUpProps {
   duration?: number;
   /** Locale para el separador de miles. */
   locale?: string;
+  /** Pequeño rebote al llegar al valor final. */
+  bounce?: boolean;
   className?: string;
 }
 
@@ -25,6 +27,7 @@ export function CountUp({
   suffix = '',
   duration = 2000,
   locale = 'en-US',
+  bounce = true,
   className,
 }: CountUpProps) {
   const ref = useRef<HTMLSpanElement>(null);
@@ -48,6 +51,17 @@ export function CountUp({
           const eased = 1 - Math.pow(1 - progress, 3);
           setCurrent(Math.round(value * eased));
           if (progress < 1) frame = requestAnimationFrame(tick);
+          else if (bounce) {
+            el.animate(
+              [
+                { transform: 'scale(1)' },
+                { transform: 'scale(1.18)', offset: 0.35 },
+                { transform: 'scale(0.94)', offset: 0.65 },
+                { transform: 'scale(1)' },
+              ],
+              { duration: 550, easing: 'ease-out' },
+            );
+          }
         };
         frame = requestAnimationFrame(tick);
       },
@@ -59,13 +73,13 @@ export function CountUp({
       observer.disconnect();
       cancelAnimationFrame(frame);
     };
-  }, [value, duration]);
+  }, [value, duration, bounce]);
 
   const formatted = new Intl.NumberFormat(locale).format(current);
   const full = `${prefix}${new Intl.NumberFormat(locale).format(value)}${suffix}`;
 
   return (
-    <span ref={ref} className={className} aria-label={full} style={{ fontVariantNumeric: 'tabular-nums' }}>
+    <span ref={ref} className={className} aria-label={full} style={{ display: 'inline-block', fontVariantNumeric: 'tabular-nums', transformOrigin: 'center bottom' }}>
       <span aria-hidden="true">{`${prefix}${formatted}${suffix}`}</span>
     </span>
   );
