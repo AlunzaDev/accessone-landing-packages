@@ -14,6 +14,11 @@ export {
   type IdentityTabsProps,
 } from './components/IdentityTabs.js';
 export { Icon, type IconName, type IconProps } from './components/Icon.js';
+export {
+  ServiceCatalog,
+  type ServiceCatalogItem,
+  type ServiceCatalogProps,
+} from './components/ServiceCatalog.js';
 export { ServiceCard, type ServiceCardProps } from './components/ServiceCard.js';
 export {
   ServiceCatalogCard,

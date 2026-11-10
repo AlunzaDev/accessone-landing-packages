@@ -18,3 +18,7 @@ await cp(
   new URL('../dist/styles/service-catalog-card.css', import.meta.url),
 );
 
+await cp(
+  new URL('../src/styles/service-catalog.css', import.meta.url),
+  new URL('../dist/styles/service-catalog.css', import.meta.url),
+);

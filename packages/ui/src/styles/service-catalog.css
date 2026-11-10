@@ -1,0 +1,251 @@
+/* Catálogo de servicios con glassmorphism */
+.accessone-glass-catalog {
+  position: relative;
+}
+
+.accessone-glass-catalog__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-auto-rows: 1fr; /* todas las cards con la misma altura */
+  gap: 18px;
+}
+
+.accessone-glass-card {
+  display: flex;
+  min-height: 300px;
+  padding: 28px;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 22px;
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.55));
+  box-shadow: inset 0 1px 0 #fff, 0 10px 30px rgba(46, 49, 92, 0.08);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  backdrop-filter: blur(16px) saturate(140%);
+  color: #2e315c;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.accessone-glass-card:hover,
+.accessone-glass-card:focus-visible {
+  border-color: #feed00;
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.75));
+  box-shadow: inset 0 1px 0 #fff, 0 22px 50px rgba(46, 49, 92, 0.16);
+  transform: translateY(-8px);
+  outline: none;
+}
+
+.accessone-glass-card__icon {
+  display: grid;
+  width: 56px;
+  height: 56px;
+  margin-bottom: 26px;
+  flex-shrink: 0;
+  place-items: center;
+  border-radius: 16px;
+  background: #fff5a5;
+  color: #2e315c;
+  box-shadow: none;
+  transition: transform 0.3s ease;
+}
+
+.accessone-glass-card__icon svg {
+  width: 27px;
+  height: 27px;
+}
+
+.accessone-glass-card:hover .accessone-glass-card__icon {
+  background: #feed00;
+  transform: rotate(-6deg) scale(1.08);
+}
+
+.accessone-glass-card h3 {
+  margin: 0 0 12px;
+  font: 600 20px/1.2 'Manrope', sans-serif;
+}
+
+.accessone-glass-card p {
+  display: -webkit-box;
+  margin: 0 0 20px;
+  overflow: hidden;
+  color: #65728b;
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.accessone-glass-card__more {
+  display: inline-flex;
+  margin-top: auto;
+  align-items: center;
+  gap: 10px;
+  color: #2e315c;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.accessone-glass-card__more b {
+  transition: transform 0.3s ease;
+}
+
+.accessone-glass-card:hover .accessone-glass-card__more b {
+  transform: translateX(6px);
+}
+
+/* Modal */
+.accessone-glass-modal {
+  width: min(560px, calc(100% - 32px));
+  max-height: calc(100% - 32px);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #2e315c;
+  overflow: visible;
+}
+
+.accessone-glass-modal::backdrop {
+  background: rgba(46, 49, 92, 0.35);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+.accessone-glass-modal[open] {
+  animation: accessone-glass-in 0.32s cubic-bezier(0.2, 0.9, 0.3, 1.2);
+}
+
+.accessone-glass-modal__panel {
+  position: relative;
+  max-height: calc(100vh - 32px);
+  padding: 36px;
+  overflow-y: auto;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 26px;
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.92), rgba(245, 246, 250, 0.82));
+  box-shadow: inset 0 1px 0 #fff, 0 30px 80px rgba(46, 49, 92, 0.28);
+  -webkit-backdrop-filter: blur(22px) saturate(150%);
+  backdrop-filter: blur(22px) saturate(150%);
+}
+
+.accessone-glass-modal__panel h3 {
+  margin: 0 0 14px;
+  font: 600 clamp(24px, 4vw, 30px)/1.15 'Manrope', sans-serif;
+}
+
+.accessone-glass-modal__panel > p {
+  margin: 0 0 20px;
+  color: #65728b;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.accessone-glass-modal__panel ul {
+  margin: 0 0 28px;
+  padding: 0;
+  list-style: none;
+}
+
+.accessone-glass-modal__panel li {
+  position: relative;
+  padding: 10px 0 10px 20px;
+  border-bottom: 1px solid #e6e9f0;
+  font-size: 14px;
+}
+
+.accessone-glass-modal__panel li::before {
+  position: absolute;
+  top: 17px;
+  left: 0;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #feed00;
+  content: '';
+}
+
+.accessone-glass-modal__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 38px;
+  height: 38px;
+  border: 1px solid #dbe2ee;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.7);
+  color: #2e315c;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.accessone-glass-modal__close:hover {
+  background: #fff5a5;
+  transform: rotate(90deg);
+}
+
+.accessone-glass-modal__cta {
+  display: inline-flex;
+  padding: 14px 20px;
+  align-items: center;
+  gap: 22px;
+  border-radius: 10px;
+  background: #feed00;
+  color: #2e315c;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+@keyframes accessone-glass-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 1050px) {
+  .accessone-glass-catalog__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .accessone-glass-catalog__grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+  }
+
+  .accessone-glass-card {
+    min-height: 0;
+  }
+
+  .accessone-glass-modal__panel {
+    padding: 28px 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .accessone-glass-card,
+  .accessone-glass-card__icon,
+  .accessone-glass-card__more b,
+  .accessone-glass-modal__close {
+    transition: none;
+  }
+
+  .accessone-glass-card:hover,
+  .accessone-glass-card:hover .accessone-glass-card__icon,
+  .accessone-glass-card:hover .accessone-glass-card__more b {
+    transform: none;
+  }
+
+  .accessone-glass-modal[open] {
+    animation: none;
+  }
+}
