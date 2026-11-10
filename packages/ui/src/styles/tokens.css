@@ -1,0 +1,13 @@
+:root {
+  --accessone-color-navy: #2e315c;
+  --accessone-color-blue: #125bf5;
+  --accessone-color-yellow: #feed00;
+  --accessone-color-surface: #fdfeff;
+  --accessone-color-background: #f5f6fa;
+  --accessone-color-text-muted: #6d708e;
+  --accessone-font-display: "Manrope", sans-serif;
+  --accessone-font-body: "Inter", sans-serif;
+  --accessone-radius-small: 9px;
+  --accessone-radius-medium: 18px;
+}
+
