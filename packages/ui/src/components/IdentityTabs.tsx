@@ -86,10 +86,10 @@ export function IdentityTabs({
           aria-labelledby={`tab-${active.id}`}
           key={active.id}
         >
-          <header className="accessone-identity__card-heading">
+          <div className="accessone-identity__card-heading">
             <h3>{active.title}</h3>
             <p>{active.eyebrow}</p>
-          </header>
+          </div>
           <div className="accessone-identity__body">{active.content}</div>
         </article>
       </div>
