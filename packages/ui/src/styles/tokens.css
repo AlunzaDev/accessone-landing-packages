@@ -9,5 +9,12 @@
   --accessone-font-body: "Inter", sans-serif;
   --accessone-radius-small: 9px;
   --accessone-radius-medium: 18px;
+  --accessone-glass-bg: rgba(46, 49, 92, 0.72);
+  --accessone-glass-bg-strong: rgba(37, 40, 78, 0.86);
+  --accessone-glass-bg-soft: rgba(253, 254, 255, 0.06);
+  --accessone-glass-bg-soft-hover: rgba(253, 254, 255, 0.1);
+  --accessone-glass-border: rgba(253, 254, 255, 0.14);
+  --accessone-glass-highlight: inset 0 1px 0 rgba(253, 254, 255, 0.16);
+  --accessone-glass-blur: blur(18px) saturate(140%);
+  --accessone-glass-blur-soft: blur(12px);
 }
-

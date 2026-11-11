@@ -1,0 +1,89 @@
+@import './tokens.css';
+
+/*
+ * AccessOne — Glassmorphism
+ * Incluye tokens.css. Importar después de los estilos de la landing.
+ *
+ * Utilidades para componentes nuevos:
+ *   .ao-glass        panel oscuro translúcido (sobre fondos navy / foto)
+ *   .ao-glass-soft   tarjeta clara sutil (sobre fondos oscuros)
+ *   .ao-glow         contenedor con manchas de luz detrás (amarillo/azul)
+ * Sin soporte de backdrop-filter se mantienen los fondos sólidos.
+ */
+
+.ao-glow { position: relative; overflow: hidden; isolation: isolate; }
+.ao-glow::before,
+.ao-glow::after { content: ''; position: absolute; z-index: -1; border-radius: 50%; filter: blur(70px); pointer-events: none; }
+.ao-glow::before { width: 320px; height: 320px; top: 8%; right: -60px; background: rgba(254, 237, 0, 0.22); }
+.ao-glow::after { width: 280px; height: 280px; bottom: 4%; left: -40px; background: rgba(18, 91, 245, 0.3); }
+
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .ao-glass {
+    background: var(--accessone-glass-bg);
+    backdrop-filter: var(--accessone-glass-blur);
+    -webkit-backdrop-filter: var(--accessone-glass-blur);
+    border: 1px solid var(--accessone-glass-border);
+    box-shadow: var(--accessone-glass-highlight), 0 18px 40px rgba(13, 15, 38, 0.18);
+  }
+  .ao-glass-soft {
+    background: var(--accessone-glass-bg-soft);
+    backdrop-filter: var(--accessone-glass-blur-soft);
+    -webkit-backdrop-filter: var(--accessone-glass-blur-soft);
+    border: 1px solid var(--accessone-glass-border);
+    border-radius: var(--accessone-radius-medium);
+    box-shadow: var(--accessone-glass-highlight), 0 18px 40px rgba(13, 15, 38, 0.18);
+  }
+
+  /* Header compartido */
+  header,
+  .home-header,
+  header.is-docked {
+    background: var(--accessone-glass-bg);
+    backdrop-filter: var(--accessone-glass-blur);
+    -webkit-backdrop-filter: var(--accessone-glass-blur);
+    border-bottom: 1px solid var(--accessone-glass-border);
+    box-shadow: 0 10px 34px rgba(19, 21, 48, 0.18), var(--accessone-glass-highlight);
+  }
+
+  /* Botón de scroll sobre la escena cero */
+  .scene-zero-scroll span {
+    background: var(--accessone-glass-bg-soft);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: var(--accessone-glass-highlight);
+  }
+
+  /* Lista de oferta del home */
+  .home-offer-list { position: relative; overflow: hidden; gap: 14px; isolation: isolate; }
+  .home-offer-list::before,
+  .home-offer-list::after { content: ''; position: absolute; z-index: -1; border-radius: 50%; filter: blur(70px); pointer-events: none; }
+  .home-offer-list::before { width: 320px; height: 320px; top: 8%; right: -60px; background: rgba(254, 237, 0, 0.22); }
+  .home-offer-list::after { width: 280px; height: 280px; bottom: 4%; left: -40px; background: rgba(18, 91, 245, 0.3); }
+  .home-offer-list article,
+  .home-offer-list article:last-child {
+    padding: 26px 24px;
+    border: 1px solid var(--accessone-glass-border);
+    border-radius: var(--accessone-radius-medium);
+    background: var(--accessone-glass-bg-soft);
+    backdrop-filter: var(--accessone-glass-blur-soft);
+    -webkit-backdrop-filter: var(--accessone-glass-blur-soft);
+    box-shadow: var(--accessone-glass-highlight), 0 18px 40px rgba(13, 15, 38, 0.18);
+    transition: transform 0.25s ease, background-color 0.25s ease;
+  }
+  .home-offer-list article:hover { transform: translateY(-4px); background: var(--accessone-glass-bg-soft-hover); }
+
+  /* Menú móvil */
+  @media (max-width: 900px) {
+    header nav {
+      background: var(--accessone-glass-bg-strong);
+      backdrop-filter: var(--accessone-glass-blur);
+      -webkit-backdrop-filter: var(--accessone-glass-blur);
+      border-bottom: 1px solid var(--accessone-glass-border);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-offer-list article { transition: none; }
+  .home-offer-list article:hover { transform: none; }
+}
