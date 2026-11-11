@@ -11,11 +11,29 @@
  * Sin soporte de backdrop-filter se mantienen los fondos sólidos.
  */
 
-.ao-glow { position: relative; overflow: hidden; isolation: isolate; }
+/* Manchas de luz: utilidad y secciones navy compartidas */
+.ao-glow,
+.page-hero,
+.service-proof,
+.contact-form-section { position: relative; overflow: hidden; isolation: isolate; }
 .ao-glow::before,
-.ao-glow::after { content: ''; position: absolute; z-index: -1; border-radius: 50%; filter: blur(70px); pointer-events: none; }
-.ao-glow::before { width: 320px; height: 320px; top: 8%; right: -60px; background: rgba(254, 237, 0, 0.22); }
-.ao-glow::after { width: 280px; height: 280px; bottom: 4%; left: -40px; background: rgba(18, 91, 245, 0.3); }
+.ao-glow::after,
+.page-hero::before,
+.page-hero::after,
+.service-proof::before,
+.service-proof::after,
+.contact-form-section::before,
+.contact-form-section::after { content: ''; position: absolute; z-index: -1; border-radius: 50%; filter: blur(70px); pointer-events: none; }
+.ao-glow::before,
+.page-hero::before,
+.service-proof::before,
+.contact-form-section::before { width: 320px; height: 320px; top: 8%; right: -60px; background: rgba(254, 237, 0, 0.22); }
+.ao-glow::after,
+.page-hero::after,
+.service-proof::after,
+.contact-form-section::after { width: 280px; height: 280px; bottom: 4%; left: -40px; background: rgba(18, 91, 245, 0.3); }
+.service-proof::before { top: auto; bottom: -80px; right: 12%; }
+.service-proof::after { top: -60px; bottom: auto; left: 10%; }
 
 @supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
   .ao-glass {
@@ -43,6 +61,18 @@
     -webkit-backdrop-filter: var(--accessone-glass-blur);
     border-bottom: 1px solid var(--accessone-glass-border);
     box-shadow: 0 10px 34px rgba(19, 21, 48, 0.18), var(--accessone-glass-highlight);
+  }
+
+  /* Chip de vidrio sobre la escena cero */
+  .scene-zero-copy p {
+    display: inline-block;
+    padding: 9px 16px;
+    border: 1px solid var(--accessone-glass-border);
+    border-radius: 999px;
+    background: var(--accessone-glass-bg-soft);
+    backdrop-filter: var(--accessone-glass-blur-soft);
+    -webkit-backdrop-filter: var(--accessone-glass-blur-soft);
+    box-shadow: var(--accessone-glass-highlight);
   }
 
   /* Botón de scroll sobre la escena cero */
