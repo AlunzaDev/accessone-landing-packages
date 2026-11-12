@@ -32,3 +32,8 @@ await cp(
   new URL('../src/styles/landing.css', import.meta.url),
   new URL('../dist/styles/landing.css', import.meta.url),
 );
+
+await cp(
+  new URL('../src/styles/media.css', import.meta.url),
+  new URL('../dist/styles/media.css', import.meta.url),
+);

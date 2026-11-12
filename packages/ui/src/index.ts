@@ -26,3 +26,10 @@ export {
   type ServiceCatalogCardProps,
 } from './components/ServiceCatalogCard.js';
 
+export {
+  MediaGallery,
+  MediaPlaceholder,
+  type MediaGalleryProps,
+  type MediaPlaceholderKind,
+  type MediaPlaceholderProps,
+} from './components/MediaPlaceholder.js';
