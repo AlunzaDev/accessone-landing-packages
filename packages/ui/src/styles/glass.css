@@ -84,11 +84,7 @@
   }
 
   /* Lista de oferta del home */
-  .home-offer-list { position: relative; overflow: hidden; gap: 14px; isolation: isolate; }
-  .home-offer-list::before,
-  .home-offer-list::after { content: ''; position: absolute; z-index: -1; border-radius: 50%; filter: blur(70px); pointer-events: none; }
-  .home-offer-list::before { width: 320px; height: 320px; top: 8%; right: -60px; background: color-mix(in oklch, var(--accessone-color-yellow) 22%, transparent); }
-  .home-offer-list::after { width: 280px; height: 280px; bottom: 4%; left: -40px; background: color-mix(in oklch, var(--accessone-color-yellow-strong) 30%, transparent); }
+  .home-offer-list { gap: 14px; }
   .home-offer-list article,
   .home-offer-list article:last-child {
     padding: 26px 24px;
