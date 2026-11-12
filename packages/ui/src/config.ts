@@ -24,3 +24,6 @@ export interface LandingBrandConfig {
   contact?: LandingContact;
 }
 
+/** Color corporativo para la interfaz del navegador y metadatos HTML. */
+export const ACCESSONE_THEME_COLOR = '#20234A';
+

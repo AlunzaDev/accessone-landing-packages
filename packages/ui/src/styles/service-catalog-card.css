@@ -12,7 +12,7 @@
   padding: 30px;
   flex-direction: column;
   background: #fff;
-  color: #2e315c;
+  color: var(--accessone-color-navy);
   transition: transform 0.28s ease, box-shadow 0.28s ease;
 }
 
@@ -35,7 +35,7 @@
   margin: 45px 0 25px;
   place-items: center;
   border-radius: 16px;
-  background: #fff5a5;
+  background: var(--accessone-color-yellow-soft);
   color: #125bf5;
   transition: transform 0.28s ease, background 0.28s ease, color 0.28s ease;
 }
@@ -46,8 +46,8 @@
 }
 
 .accessone-service-catalog-card:hover .accessone-service-catalog-card__icon {
-  background: #feed00;
-  color: #2e315c;
+  background: var(--accessone-color-yellow);
+  color: var(--accessone-color-navy);
   transform: rotate(-5deg) scale(1.06);
 }
 
@@ -85,7 +85,7 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #feed00;
+  background: var(--accessone-color-yellow);
   content: '';
 }
 
@@ -98,7 +98,7 @@
 }
 
 .accessone-service-catalog-card__brand span {
-  color: #2e315c;
+  color: var(--accessone-color-navy);
   font-size: 16px;
 }
 

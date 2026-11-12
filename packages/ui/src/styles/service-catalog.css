@@ -22,7 +22,7 @@
   box-shadow: inset 0 1px 0 #fff, 0 10px 30px rgba(46, 49, 92, 0.08);
   -webkit-backdrop-filter: blur(16px) saturate(140%);
   backdrop-filter: blur(16px) saturate(140%);
-  color: #2e315c;
+  color: var(--accessone-color-navy);
   font: inherit;
   text-align: left;
   cursor: pointer;
@@ -31,7 +31,7 @@
 
 .accessone-glass-card:hover,
 .accessone-glass-card:focus-visible {
-  border-color: #feed00;
+  border-color: var(--accessone-color-yellow);
   background: linear-gradient(160deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.75));
   box-shadow: inset 0 1px 0 #fff, 0 22px 50px rgba(46, 49, 92, 0.16);
   transform: translateY(-8px);
@@ -46,8 +46,8 @@
   flex-shrink: 0;
   place-items: center;
   border-radius: 16px;
-  background: #fff5a5;
-  color: #2e315c;
+  background: var(--accessone-color-yellow-soft);
+  color: var(--accessone-color-navy);
   box-shadow: none;
   transition: transform 0.3s ease;
 }
@@ -58,7 +58,7 @@
 }
 
 .accessone-glass-card:hover .accessone-glass-card__icon {
-  background: #feed00;
+  background: var(--accessone-color-yellow);
   transform: rotate(-6deg) scale(1.08);
 }
 
@@ -83,7 +83,7 @@
   margin-top: auto;
   align-items: center;
   gap: 10px;
-  color: #2e315c;
+  color: var(--accessone-color-navy);
   font-size: 13px;
   font-weight: 600;
 }
@@ -103,7 +103,7 @@
   padding: 0;
   border: 0;
   background: transparent;
-  color: #2e315c;
+  color: var(--accessone-color-navy);
   overflow: visible;
 }
 
@@ -162,7 +162,7 @@
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #feed00;
+  background: var(--accessone-color-yellow);
   content: '';
 }
 
@@ -175,7 +175,7 @@
   border: 1px solid #dbe2ee;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.7);
-  color: #2e315c;
+  color: var(--accessone-color-navy);
   font-size: 22px;
   line-height: 1;
   cursor: pointer;
@@ -183,7 +183,7 @@
 }
 
 .accessone-glass-modal__close:hover {
-  background: #fff5a5;
+  background: var(--accessone-color-yellow-soft);
   transform: rotate(90deg);
 }
 
@@ -193,8 +193,8 @@
   align-items: center;
   gap: 22px;
   border-radius: 10px;
-  background: #feed00;
-  color: #2e315c;
+  background: var(--accessone-color-yellow);
+  color: var(--accessone-color-navy);
   font-weight: 700;
   text-decoration: none;
 }
