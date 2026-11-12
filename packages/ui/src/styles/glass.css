@@ -27,11 +27,11 @@
 .ao-glow::before,
 .page-hero::before,
 .service-proof::before,
-.contact-form-section::before { width: 320px; height: 320px; top: 8%; right: -60px; background: rgba(254, 237, 0, 0.22); }
+.contact-form-section::before { width: 320px; height: 320px; top: 8%; right: -60px; background: color-mix(in oklch, var(--accessone-color-yellow) 22%, transparent); }
 .ao-glow::after,
 .page-hero::after,
 .service-proof::after,
-.contact-form-section::after { width: 280px; height: 280px; bottom: 4%; left: -40px; background: rgba(18, 91, 245, 0.3); }
+.contact-form-section::after { width: 280px; height: 280px; bottom: 4%; left: -40px; background: color-mix(in oklch, var(--accessone-color-yellow-strong) 30%, transparent); }
 .service-proof::before { top: auto; bottom: -80px; right: 12%; }
 .service-proof::after { top: -60px; bottom: auto; left: 10%; }
 
@@ -87,8 +87,8 @@
   .home-offer-list { position: relative; overflow: hidden; gap: 14px; isolation: isolate; }
   .home-offer-list::before,
   .home-offer-list::after { content: ''; position: absolute; z-index: -1; border-radius: 50%; filter: blur(70px); pointer-events: none; }
-  .home-offer-list::before { width: 320px; height: 320px; top: 8%; right: -60px; background: rgba(254, 237, 0, 0.22); }
-  .home-offer-list::after { width: 280px; height: 280px; bottom: 4%; left: -40px; background: rgba(18, 91, 245, 0.3); }
+  .home-offer-list::before { width: 320px; height: 320px; top: 8%; right: -60px; background: color-mix(in oklch, var(--accessone-color-yellow) 22%, transparent); }
+  .home-offer-list::after { width: 280px; height: 280px; bottom: 4%; left: -40px; background: color-mix(in oklch, var(--accessone-color-yellow-strong) 30%, transparent); }
   .home-offer-list article,
   .home-offer-list article:last-child {
     padding: 26px 24px;
